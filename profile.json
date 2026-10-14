@@ -1,0 +1,155 @@
+{
+  "username": "CoreRCE",
+  "display_name": "CoreRCE",
+  "tagline": "我们从深渊观察",
+  "bio": [
+    "我们从深渊观察"
+  ],
+  "portrait": "assets/profile.png",
+  "info": [
+    {
+      "label": "账号",
+      "value": "CoreRCE"
+    },
+    {
+      "label": "Blog",
+      "value": "https://corerce.com"
+    },
+    {
+      "label": "加入 GitHub",
+      "value": "2025-05-16"
+    },
+    {
+      "label": "关注方向",
+      "value": "加密货币 · 免杀对抗 · 红队 · 内网渗透"
+    },
+    {
+      "label": "开发语言",
+      "value": "C# · Go（Golang） · Rust · Python"
+    },
+    {
+      "label": "IDE",
+      "value": "Visual Studio Code · Visual Studio · Trae IDE"
+    },
+    {
+      "label": "常用模型",
+      "value": "6 Astra · 6 Sol · 6.1 Sol · DeepSeek 4.1"
+    },
+    {
+      "label": "系统环境",
+      "value": "Windows 11 · macOS · Ubuntu (VPS) · Kali Linux (VM)"
+    },
+    {
+      "label": "联系入口",
+      "value": "GitHub · Blog"
+    }
+  ],
+  "ecosystem": [
+    {
+      "label": "开发语言",
+      "items": [
+        "C#",
+        "Go（Golang）",
+        "Rust",
+        "Python"
+      ]
+    },
+    {
+      "label": "常用 IDE",
+      "items": [
+        "Visual Studio Code",
+        "Visual Studio",
+        "Trae IDE"
+      ]
+    },
+    {
+      "label": "常用模型",
+      "items": [
+        "6 Astra",
+        "6 Sol",
+        "6.1 Sol",
+        "DeepSeek 4.1"
+      ]
+    },
+    {
+      "label": "系统环境",
+      "items": [
+        "Windows 11",
+        "macOS",
+        "Ubuntu (VPS)",
+        "Kali Linux (VM)"
+      ]
+    },
+    {
+      "label": "加密货币",
+      "items": [
+        "量化研究",
+        "Web3"
+      ]
+    },
+    {
+      "label": "免杀对抗",
+      "items": [
+        "BTOVD",
+        "Rootkit"
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2025.05",
+      "title": "加入 GitHub",
+      "detail": "CoreRCE"
+    },
+    {
+      "date": "2026.03",
+      "title": "创建仓库",
+      "detail": "private-navigation-system"
+    },
+    {
+      "date": "2026.07",
+      "title": "创建仓库",
+      "detail": "Vben-Admin-Antd-Lite"
+    },
+    {
+      "date": "2026.07",
+      "title": "创建仓库",
+      "detail": "react-shadcn-admin"
+    },
+    {
+      "date": "2026.10",
+      "title": "主页初始化",
+      "detail": "GitHub 个人主页"
+    }
+  ],
+  "projects": [
+    {
+      "name": "private-navigation-system",
+      "url": "https://github.com/CoreRCE/private-navigation-system",
+      "description": "支持自托管的私人导航页，提供 JWT 认证、链接分类、搜索和 JSON 文件存储。",
+      "language": "TypeScript"
+    },
+    {
+      "name": "react-shadcn-admin",
+      "url": "https://github.com/CoreRCE/react-shadcn-admin",
+      "description": "基于 React、Go 和 SQLite 的全栈后台框架，支持用户管理、主题切换和中英双语。",
+      "language": "TypeScript / Go"
+    },
+    {
+      "name": "Vben-Admin-Antd-Lite",
+      "url": "https://github.com/CoreRCE/Vben-Admin-Antd-Lite",
+      "description": "基于 Vue Vben Admin 的精简后台模板，保留 Ant Design Vue 应用和本地 Mock API。",
+      "language": "Vue / TypeScript"
+    }
+  ],
+  "links": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/CoreRCE"
+    },
+    {
+      "label": "Blog",
+      "url": "https://corerce.com"
+    }
+  ]
+}
