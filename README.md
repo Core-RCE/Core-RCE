@@ -2,7 +2,7 @@
 <div align="center">
   <img src="./hello.svg" width="600" alt="CoreRCE 终端欢迎图"/>
   <br/>
-  <a href="https://github.com/CoreRCE"><code>GitHub</code></a> &nbsp;·&nbsp; <a href="https://corerce.com"><code>Blog</code></a> &nbsp;·&nbsp; <a href="mailto:byovd@pm.me"><code>Email</code></a>
+  <a href="https://github.com/Core-RCE"><code>GitHub</code></a> &nbsp;·&nbsp; <a href="https://corerce.com"><code>Blog</code></a> &nbsp;·&nbsp; <a href="mailto:byovd@pm.me"><code>Email</code></a>
 </div>
 
 <img src="./hd-portrait.svg" width="940" alt="头像"/>
@@ -13,7 +13,7 @@
 > 我们从深渊观察<br/>
 
 <img src="./hd-system-info.svg" width="940" alt="系统信息"/>
-<img src="./neofetch.svg" width="940" alt="CoreRCE 的系统信息"/>
+<img src="./neofetch.svg" width="940" alt="Core-RCE 的系统信息"/>
 
 <img src="./hd-ecosystem.svg" width="940" alt="技术生态"/>
 <img src="./system-map.svg" width="940" alt="个人技术生态，未提供的信息标记为待补充"/>
@@ -26,11 +26,11 @@
 
 <table>
 <tr>
-<td width="50%" valign="top"><h3><a href="https://github.com/CoreRCE/private-navigation-system">private-navigation-system</a></h3><p>支持自托管的私人导航页，提供 JWT 认证、链接分类、搜索和 JSON 文件存储。</p><p><code>TypeScript</code></p></td>
-<td width="50%" valign="top"><h3><a href="https://github.com/CoreRCE/react-shadcn-admin">react-shadcn-admin</a></h3><p>基于 React、Go 和 SQLite 的全栈后台框架，支持用户管理、主题切换和中英双语。</p><p><code>TypeScript / Go</code></p></td>
+<td width="50%" valign="top"><h3><a href="https://github.com/Core-RCE/ARTEX-original-version">ARTEX-original-version</a></h3><p>ARTEX 官方闭源前的开源源码备份，保留原始代码，未经二次开发，遵循 AGPL-3.0 开源协议。</p><p><code>Go</code></p></td>
+<td width="50%" valign="top"><h3><a href="https://github.com/Core-RCE/react-shadcn-admin">react-shadcn-admin</a></h3><p>基于 React、Go 和 SQLite 的全栈后台框架，支持用户管理、主题切换和中英双语。</p><p><code>TypeScript / Go</code></p></td>
 </tr>
 <tr>
-<td width="50%" valign="top"><h3><a href="https://github.com/CoreRCE/Vben-Admin-Antd-Lite">Vben-Admin-Antd-Lite</a></h3><p>基于 Vue Vben Admin 的精简后台模板，保留 Ant Design Vue 应用和本地 Mock API。</p><p><code>Vue / TypeScript</code></p></td>
+<td width="50%" valign="top"><h3><a href="https://github.com/Core-RCE/vue-vben-admin-lite">vue-vben-admin-lite</a></h3><p>基于 Vben Admin 5.7.0 冻结基线精简的 Vue 3 + Ant Design Vue 中后台模板，保留本地 Mock API。</p><p><code>TypeScript</code></p></td>
 <td width="50%"></td>
 </tr>
 </table>
@@ -39,7 +39,7 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./snake-dark.svg"/>
   <source media="(prefers-color-scheme: light)" srcset="./snake.svg"/>
-  <img src="./snake.svg" width="940" alt="CoreRCE 的 GitHub 贡献贪吃蛇动画"/>
+  <img src="./snake.svg" width="940" alt="Core-RCE 的 GitHub 贡献贪吃蛇动画"/>
 </picture>
 
 <details>

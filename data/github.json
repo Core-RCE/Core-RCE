@@ -1,62 +1,63 @@
 {
   "available": true,
   "profile": {
-    "username": "CoreRCE",
+    "username": "Core-RCE",
     "name": "CoreRCE",
-    "bio": "We Observe From The Abyss",
-    "avatar_url": "https://avatars.githubusercontent.com/u/212041866?v=4",
-    "public_repos": 3,
+    "bio": "We Observe From The Abysm",
+    "avatar_url": "https://avatars.githubusercontent.com/u/319666749?v=4",
+    "public_repos": 4,
     "followers": 0,
-    "following": 7,
-    "created_at": "2025-05-16T19:33:24Z",
+    "following": 0,
+    "created_at": "2026-08-22T02:06:08Z",
     "blog": "https://CoreRCE.com",
-    "html_url": "https://github.com/CoreRCE"
+    "html_url": "https://github.com/Core-RCE"
   },
   "repos": [
     {
+      "name": "ARTEX-original-version",
+      "description": "ARTEX 官方闭源前的开源源码备份，保留原始代码，未经二次开发，遵循 AGPL-3.0 开源协议 | Archive of the original open-source ARTEX codebase before it became closed-source. Unmodified and licensed under AGPL-3.0.",
+      "html_url": "https://github.com/Core-RCE/ARTEX-original-version",
+      "language": "Go",
+      "stargazers_count": 1,
+      "updated_at": "2026-10-13T05:14:07Z",
+      "archived": false,
+      "fork": false
+    },
+    {
       "name": "react-shadcn-admin",
       "description": null,
-      "html_url": "https://github.com/CoreRCE/react-shadcn-admin",
+      "html_url": "https://github.com/Core-RCE/react-shadcn-admin",
       "language": "TypeScript",
-      "stargazers_count": 0,
-      "updated_at": "2026-07-21T03:44:35Z",
+      "stargazers_count": 1,
+      "updated_at": "2026-09-12T09:43:56Z",
       "archived": false,
       "fork": false
     },
     {
-      "name": "Vben-Admin-Antd-Lite",
-      "description": "A modern vue admin lite panel built with Vue3, Shadcn UI, Vite, TypeScript, 和 Monorepo. It's fast!",
-      "html_url": "https://github.com/CoreRCE/Vben-Admin-Antd-Lite",
-      "language": "Vue",
-      "stargazers_count": 0,
-      "updated_at": "2026-07-11T12:18:14Z",
-      "archived": false,
-      "fork": false
-    },
-    {
-      "name": "private-navigation-system",
-      "description": "A secure, private, self-hosted navigation page system designed for personal use.",
-      "html_url": "https://github.com/CoreRCE/private-navigation-system",
+      "name": "vue-vben-admin-lite",
+      "description": "基于 Vben 5.7.0 冻结精简的 Vue 3 + Ant Design Vue 中后台模板，仅保留 web-antd 与 backend-mock，专注于降低项目体量和维护成本",
+      "html_url": "https://github.com/Core-RCE/vue-vben-admin-lite",
       "language": "TypeScript",
       "stargazers_count": 0,
-      "updated_at": "2026-03-25T16:03:28Z",
+      "updated_at": "2026-09-10T18:49:03Z",
       "archived": false,
       "fork": false
     }
   ],
   "languages": {
-    "TypeScript": 1038121,
-    "Vue": 969063,
-    "CSS": 65160,
-    "Go": 62209,
-    "JavaScript": 17043,
-    "HTML": 6496,
-    "SCSS": 2311,
-    "Shell": 1590,
-    "Dockerfile": 884,
-    "Makefile": 417
+    "TypeScript": 2628546,
+    "Go": 2264061,
+    "Vue": 715161,
+    "CSS": 74727,
+    "PLpgSQL": 56041,
+    "JavaScript": 39767,
+    "Shell": 29202,
+    "Python": 23968,
+    "HTML": 5633,
+    "Dockerfile": 3110,
+    "SCSS": 656
   },
-  "updated_at": "2026-10-14T13:25:13Z",
+  "updated_at": "2026-10-14T13:44:22Z",
   "scope": "public non-fork non-archived repositories, excluding profile repo",
-  "username": "CoreRCE"
+  "username": "Core-RCE"
 }
