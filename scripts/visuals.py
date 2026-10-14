@@ -124,6 +124,13 @@ def _line(x1, y1, x2, y2, delay=None):
             f'class="rule{anim}" stroke-width="1"/>')
 
 
+def _rect_edge(cx, cy, width, height, toward_x, toward_y):
+    """Meet a rectangle's edge along the line toward another center."""
+    dx, dy = toward_x - cx, toward_y - cy
+    scale = 1 / max(abs(dx) / (width / 2), abs(dy) / (height / 2))
+    return cx + dx * scale, cy + dy * scale
+
+
 def _group(parts, delay=0, animation="fade"):
     return f'<g class="{animation}" style="--delay:{delay:.2f}s">' + "".join(parts) + "</g>"
 
@@ -284,7 +291,7 @@ def system_info(config, snapshot):
         wrapped = _wrap(item.get("value", "待补充"), 58, 3)
         rows.append((_short(item.get("label", "信息"), 18), wrapped))
     height = max(324, 102 + sum(max(1, len(values)) * 20 + 8 for _, values in rows))
-    parts = [f'<rect width="{WIDTH}" height="{height}" rx="12" class="surface"/>']
+    parts = []
     mascot = _core_lines(30, 22)
     for i, row in enumerate(mascot):
         parts.append(_group([f'<text xml:space="preserve" x="24" y="{62 + i * 11.5:.2f}" '
@@ -317,8 +324,9 @@ def ecosystem(config):
     hub_x, hub_y = 470, 290
     node_w, node_h = 230, 90
     for index, (x, y) in enumerate(positions):
-        parts.append(_line(hub_x, hub_y, x, y, .1 + index * .06))
-    parts.append(f'<rect x="350" y="252" width="240" height="76" rx="3" class="surface"/>')
+        start_x, start_y = _rect_edge(hub_x, hub_y, 240, 76, x, y)
+        end_x, end_y = _rect_edge(x, y, node_w, node_h, hub_x, hub_y)
+        parts.append(_line(start_x, start_y, end_x, end_y, .1 + index * .06))
     parts.append(f'<rect x="350" y="252" width="240" height="76" rx="3" class="rule"/>')
     parts.append(_group([_text(hub_x, 283, _short(config.get("username", "corerce").upper(), 22) + ".SYS",
                               14, weight=600, anchor="middle", spacing=1),
@@ -326,8 +334,6 @@ def ecosystem(config):
     for index, ((x, y), node) in enumerate(zip(positions, nodes)):
         lines = _wrap(" · ".join(str(item) for item in node.get("items", ["待补充"])), 34, 3)
         body = [f'<rect x="{x - node_w / 2}" y="{y - node_h / 2}" width="{node_w}" height="{node_h}" '
-                f'rx="3" class="surface"/>',
-                f'<rect x="{x - node_w / 2}" y="{y - node_h / 2}" width="{node_w}" height="{node_h}" '
                 f'rx="3" class="rule"/>',
                 _text(x, y - 19, _short(node.get("label", "待补充"), 24), 12.5, weight=600,
                       anchor="middle", spacing=.4)]
@@ -379,8 +385,7 @@ def language_stats(snapshot):
                         if isinstance(value, int) and not isinstance(value, bool) and value > 0),
                        key=lambda item: (-item[1], item[0]))
     height = 160 if not languages else 142 + min(7, len(languages)) * 34
-    parts = [f'<rect width="{WIDTH}" height="{height}" rx="12" class="surface"/>']
-    parts += _frame("语言分布 / 公开仓库代码字节数", "图 02", WIDTH, height)
+    parts = _frame("语言分布 / 公开仓库代码字节数", "图 02", WIDTH, height)
     if not languages:
         parts += [_text(WIDTH / 2, 86, "暂无语言数据", 13, "muted", anchor="middle"),
                   _text(WIDTH / 2, 109, "未同步" if not snapshot.get("available") else "未返回可统计的代码字节数",

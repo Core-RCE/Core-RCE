@@ -87,8 +87,82 @@ class VisualsTests(unittest.TestCase):
                        if "draw" in line.get("class", "").split()]
         self.assertEqual(len(connections), len(labels))
         nodes = [rect for rect in element.findall(".//s:rect", ns)
-                 if rect.get("class") == "surface" and rect.get("width") == "230"]
+                 if rect.get("class") == "rule" and rect.get("width") == "230"]
         self.assertEqual(len(nodes), len(labels))
+
+    def test_cards_have_no_background_elements(self):
+        config = {"username": "CoreRCE", "info": [{"label": "状态", "value": "已填写"}],
+                  "ecosystem": [{"label": "开发语言", "items": ["Python"]}]}
+        images = {
+            "system_info": visuals.system_info(config, {"available": False}),
+            "ecosystem": visuals.ecosystem(config),
+            "language_data": visuals.language_stats({"available": True, "languages": {"Python": 123}}),
+            "language_empty": visuals.language_stats({"available": True, "languages": {}}),
+            "language_unsynced": visuals.language_stats({"available": False}),
+        }
+        ns = {"s": "http://www.w3.org/2000/svg"}
+        for name, image in images.items():
+            with self.subTest(section=name):
+                root = ET.fromstring(image)
+                self.assertFalse(any("surface" in element.get("class", "").split()
+                                     for element in root.iter()))
+                self.assertFalse(any(rect.get("width") == root.get("width")
+                                     and rect.get("height") == root.get("height")
+                                     for rect in root.findall(".//s:rect", ns)))
+        # Language bars still carry data fill; only the canvas background is removed.
+        data_rectangles = ET.fromstring(images["language_data"]).findall(".//s:rect", ns)
+        self.assertTrue(any(rect.get("class") == "data" for rect in data_rectangles))
+
+    def test_ecosystem_lines_connect_edges_without_crossing_card_interiors(self):
+        ns = {"s": "http://www.w3.org/2000/svg"}
+
+        def bounds(rect):
+            x, y = float(rect.get("x")), float(rect.get("y"))
+            return x, y, x + float(rect.get("width")), y + float(rect.get("height"))
+
+        def on_edge(point, box):
+            x, y = point
+            left, top, right, bottom = box
+            return (left - .02 <= x <= right + .02 and top - .02 <= y <= bottom + .02
+                    and min(abs(x - left), abs(x - right), abs(y - top), abs(y - bottom)) <= .02)
+
+        def crosses_interior(start, end, box):
+            # Clip the segment against a slightly inset box so a boundary touch
+            # is accepted while a line through text/card content is rejected.
+            low, high = 0.0, 1.0
+            for origin, target, minimum, maximum in (
+                    (start[0], end[0], box[0] + .03, box[2] - .03),
+                    (start[1], end[1], box[1] + .03, box[3] - .03)):
+                delta = target - origin
+                if abs(delta) < 1e-9:
+                    if not minimum < origin < maximum:
+                        return False
+                    continue
+                entry, leave = sorted(((minimum - origin) / delta, (maximum - origin) / delta))
+                low, high = max(low, entry), min(high, leave)
+                if low >= high:
+                    return False
+            return low < high
+
+        for count in (6, 8):
+            with self.subTest(nodes=count):
+                root = ET.fromstring(visuals.ecosystem({"username": "CoreRCE", "ecosystem": [
+                    {"label": f"节点 {index}", "items": ["已填写"]} for index in range(count)
+                ]}))
+                rectangles = root.findall(".//s:rect", ns)
+                hub = next(bounds(rect) for rect in rectangles if rect.get("width") == "240")
+                nodes = [bounds(rect) for rect in rectangles if rect.get("width") == "230"]
+                connections = [line for line in root.findall(".//s:line", ns)
+                               if "draw" in line.get("class", "").split()]
+                self.assertEqual(len(connections), count)
+                self.assertEqual(len(nodes), count)
+                for line, node in zip(connections, nodes):
+                    start = float(line.get("x1")), float(line.get("y1"))
+                    end = float(line.get("x2")), float(line.get("y2"))
+                    self.assertTrue(on_edge(start, hub))
+                    self.assertTrue(on_edge(end, node))
+                    for box in [hub] + nodes:
+                        self.assertFalse(crosses_interior(start, end, box))
 
 
 if __name__ == "__main__":
