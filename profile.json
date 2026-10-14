@@ -41,7 +41,7 @@
     },
     {
       "label": "联系入口",
-      "value": "GitHub · Blog"
+      "value": "GitHub · Blog · byovd@pm.me"
     }
   ],
   "ecosystem": [
@@ -150,6 +150,10 @@
     {
       "label": "Blog",
       "url": "https://corerce.com"
+    },
+    {
+      "label": "Email",
+      "url": "mailto:byovd@pm.me"
     }
   ]
 }

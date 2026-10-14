@@ -2,7 +2,7 @@
 <div align="center">
   <img src="./hello.svg" width="600" alt="CoreRCE 终端欢迎图"/>
   <br/>
-  <a href="https://github.com/CoreRCE"><code>GitHub</code></a> &nbsp;·&nbsp; <a href="https://corerce.com"><code>Blog</code></a>
+  <a href="https://github.com/CoreRCE"><code>GitHub</code></a> &nbsp;·&nbsp; <a href="https://corerce.com"><code>Blog</code></a> &nbsp;·&nbsp; <a href="mailto:byovd@pm.me"><code>Email</code></a>
 </div>
 
 <img src="./hd-portrait.svg" width="940" alt="头像"/>
